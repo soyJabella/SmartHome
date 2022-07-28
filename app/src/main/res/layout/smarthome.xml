@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#303459">
+
+    <TextView
+        android:id="@+id/tMensajes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:height="120dp"
+        android:background="#272939"
+        android:scrollbars="vertical"
+        android:text="Se estableció conexión con la casa..."
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Acciones"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/bPuerta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Abrir puerta " />
+
+    <Button
+        android:id="@+id/bLuz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Encender luz" />
+
+    <Button
+        android:id="@+id/bAlarma"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enceder alarma" />
+
+</LinearLayout>
