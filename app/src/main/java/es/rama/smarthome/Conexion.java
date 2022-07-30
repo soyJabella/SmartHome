@@ -52,13 +52,13 @@ class Conexion implements Runnable
     {
         while(true)
         {
-            if(this.verificarConexion()!=false)
+            if(this.verificarConexion()==true)
             {
                 while(true)
                 {
                     if(this.obtenerCola().getLen()>0)
                     {
-                        this.enviarMensaje(this.obtenerCola().retirar());
+                        enviarMensaje(c.retirar());
                     }
                 }
             }
@@ -75,6 +75,7 @@ class Conexion implements Runnable
                     this.ipServidor = null;
                 }
             }
+
         }
     }
 }

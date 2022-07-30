@@ -27,6 +27,7 @@ public class SmartHome extends Activity {
         private Button bConectar;
         private EditText iIpServidor;
         private ProgressBar barEspera;
+
         public Login()
         {
             setContentView(R.layout.login);
@@ -44,14 +45,14 @@ public class SmartHome extends Activity {
 
                     try
                     {
-                        Thread.sleep(1000);
+                        Thread.sleep(500);
                     }
                     catch (InterruptedException e)
                     {
 
                     }
 
-                    if(conn.verificarConexion())
+                    if(conn.verificarConexion()==true)
                     {
                         Toast.makeText(SmartHome.this, "Se conecto", Toast.LENGTH_LONG).show();
                         new SmartRemote();
