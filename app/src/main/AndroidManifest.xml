@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartHome">
-        <service android:name=".Conexion"/>
         <activity android:name=".SmartHome"
             android:exported="true">
             <intent-filter>

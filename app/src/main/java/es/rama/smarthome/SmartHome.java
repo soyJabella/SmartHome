@@ -13,14 +13,13 @@ import android.widget.Toast;
 
 public class SmartHome extends Activity {
     private Conexion conn;
-    private Login l;
 
     @Override
     public void onCreate(Bundle saveInstanceState)
     {
         super.onCreate(saveInstanceState);
         this.conn = new Conexion();
-        this.l = new Login();
+        new Login();
     }
 
     class Login
@@ -45,7 +44,7 @@ public class SmartHome extends Activity {
 
                     try
                     {
-                        Thread.sleep(500);
+                        Thread.sleep(1000);
                     }
                     catch (InterruptedException e)
                     {
@@ -55,6 +54,7 @@ public class SmartHome extends Activity {
                     if(conn.verificarConexion())
                     {
                         Toast.makeText(SmartHome.this, "Se conecto", Toast.LENGTH_LONG).show();
+                        new SmartRemote();
                     }
                     else
                     {
@@ -66,5 +66,48 @@ public class SmartHome extends Activity {
                 }
             });
         }
+    }
+
+    class SmartRemote
+    {
+        private Button bPuerta;
+        private Button bLuz;
+        private Button bAlarma;
+        private EscuchadorBotones escuchador;
+
+        public SmartRemote()
+        {
+            setContentView(R.layout.smarthome);
+            bPuerta = (Button) findViewById(R.id.bPuerta);
+            bLuz = (Button) findViewById(R.id.bLuz);
+            bAlarma = (Button) findViewById(R.id.bAlarma);
+            escuchador = new EscuchadorBotones();
+
+            //Asignando el escuchador a los botones
+            bPuerta.setOnClickListener(escuchador);
+            bLuz.setOnClickListener(escuchador);
+            bAlarma.setOnClickListener(escuchador);
+        }
+
+        class EscuchadorBotones implements View.OnClickListener
+        {
+            @Override
+            public void onClick(View view)
+            {
+                if(view.getId() == bPuerta.getId())
+                {
+                    conn.obtenerCola().insertar(1);
+                }
+                else if(view.getId() == bLuz.getId())
+                {
+                    conn.obtenerCola().insertar(2);
+                }
+                else if(view.getId() == bAlarma.getId())
+                {
+                    conn.obtenerCola().insertar(3);
+                }
+            }
+        }
+
     }
 }

@@ -1,5 +1,6 @@
 package es.rama.smarthome;
 
+import java.io.DataOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 
@@ -29,6 +30,23 @@ class Conexion implements Runnable
         return this.verConexion;
     }
 
+    public synchronized Cola obtenerCola()
+    {
+        return this.c;
+    }
+
+    private void enviarMensaje(int Msg)
+    {
+        DataOutputStream cSalida;
+        try
+        {
+            cSalida = new DataOutputStream(this.conexion.getOutputStream());
+            cSalida.writeInt(Msg);
+        } catch (Exception e) {
+
+        }
+    }
+
     @Override
     public void run()
     {
@@ -38,7 +56,10 @@ class Conexion implements Runnable
             {
                 while(true)
                 {
-
+                    if(this.obtenerCola().getLen()>0)
+                    {
+                        this.enviarMensaje(this.obtenerCola().retirar());
+                    }
                 }
             }
             else if(this.ipServidor!=null)
