@@ -53,7 +53,7 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/bAlarma"
+                    android:id="@+id/bEAlarma"
                     android:layout_width="155dp"
                     android:layout_height="wrap_content"
                     android:autoText="true"
@@ -67,7 +67,7 @@
                     tools:ignore="TextContrastCheck" />
 
                 <Button
-                    android:id="@+id/bPuerta"
+                    android:id="@+id/bAPuerta"
                     android:layout_width="155dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/tres"
@@ -79,7 +79,7 @@
                     app:iconSize="25dp" />
 
                 <Button
-                    android:id="@+id/bLuz"
+                    android:id="@+id/bELuz"
                     android:layout_width="155dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/tres"
@@ -90,7 +90,7 @@
                     app:iconSize="25dp" />
 
                 <Button
-                    android:id="@+id/button4"
+                    android:id="@+id/bAGarage"
                     android:layout_width="155dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/tres"
@@ -110,7 +110,7 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/bAAlarma"
                     android:layout_width="155dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/tres"
@@ -122,7 +122,7 @@
                     app:iconTintMode="multiply" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/bCPuerta"
                     android:layout_width="155dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/tres"
@@ -134,7 +134,7 @@
                     app:iconTintMode="multiply" />
 
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/bALuz"
                     android:layout_width="155dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/tres"
@@ -146,7 +146,7 @@
                     app:iconTintMode="multiply" />
 
                 <Button
-                    android:id="@+id/button5"
+                    android:id="@+id/bCGarage"
                     android:layout_width="155dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/tres"

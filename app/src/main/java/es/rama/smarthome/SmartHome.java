@@ -1,18 +1,12 @@
 package es.rama.smarthome;
 
 import android.app.Activity;
-import android.app.Application;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.constraintlayout.widget.ConstraintSet;
 
 public class SmartHome extends Activity {
     private Conexion conn;
@@ -62,10 +56,8 @@ public class SmartHome extends Activity {
                     }
                     else
                     {
-                        barEspera.setVisibility(ProgressBar.INVISIBLE);
                         Toast.makeText(SmartHome.this, "No se pudo establecer conexion", Toast.LENGTH_LONG).show();
                     }
-
                     barEspera.setVisibility(ProgressBar.INVISIBLE);
                 }
             });
@@ -74,23 +66,49 @@ public class SmartHome extends Activity {
 
     class SmartRemote
     {
-        private Button bPuerta;
-        private Button bLuz;
-        private Button bAlarma;
+        private Button bAPuerta;
+        private Button bELuz;
+        private Button bEAlarma;
+        private Button bAGarage;
+
+        private Button bCPuerta;
+        private Button bALuz;
+        private Button bAAlarma;
+        private Button bCGarage;
+
         private EscuchadorBotones escuchador;
 
         public SmartRemote()
         {
             setContentView(R.layout.smarthome);
-            bPuerta = (Button) findViewById(R.id.bPuerta);
-            bLuz = (Button) findViewById(R.id.bLuz);
-            bAlarma = (Button) findViewById(R.id.bAlarma);
+
+            bAPuerta = (Button) findViewById(R.id.bAPuerta);
+            bELuz = (Button) findViewById(R.id.bELuz);
+            bEAlarma = (Button) findViewById(R.id.bEAlarma);
+            bAGarage = (Button) findViewById(R.id.bAGarage);
+
+            bCPuerta = (Button) findViewById(R.id.bCPuerta);
+            bALuz = (Button) findViewById(R.id.bALuz);
+            bAAlarma = (Button) findViewById(R.id.bAAlarma);
+            bCGarage = (Button) findViewById(R.id.bCGarage);
+
             escuchador = new EscuchadorBotones();
 
             //Asignando el escuchador a los botones
-            bPuerta.setOnClickListener(escuchador);
-            bLuz.setOnClickListener(escuchador);
-            bAlarma.setOnClickListener(escuchador);
+            bAPuerta.setOnClickListener(escuchador);
+            bELuz.setOnClickListener(escuchador);
+            bEAlarma.setOnClickListener(escuchador);
+            bAGarage.setOnClickListener(escuchador);
+
+            bCPuerta.setOnClickListener(escuchador);
+            bALuz.setOnClickListener(escuchador);
+            bAAlarma.setOnClickListener(escuchador);
+            bCGarage.setOnClickListener(escuchador);
+
+            bCPuerta.setEnabled(false);
+            bALuz.setEnabled(false);
+            bAAlarma.setEnabled(false);
+            bCGarage.setEnabled(false);
         }
 
         class EscuchadorBotones implements View.OnClickListener
@@ -98,17 +116,61 @@ public class SmartHome extends Activity {
             @Override
             public void onClick(View view)
             {
-                if(view.getId() == bPuerta.getId())
+                if(view.getId() == bAPuerta.getId() || view.getId() == bCPuerta.getId())
                 {
                     conn.obtenerCola().insertar(1);
+                    if(bAPuerta.isEnabled())
+                    {
+                        bAPuerta.setEnabled(false);
+                        bCPuerta.setEnabled(true);
+                    }
+                    else
+                    {
+                        bAPuerta.setEnabled(true);
+                        bCPuerta.setEnabled(false);
+                    }
                 }
-                else if(view.getId() == bLuz.getId())
+                else if(view.getId() == bELuz.getId() || view.getId() == bALuz.getId())
                 {
                     conn.obtenerCola().insertar(2);
+                    if(bELuz.isEnabled())
+                    {
+                        bELuz.setEnabled(false);
+                        bALuz.setEnabled(true);
+                    }
+                    else
+                    {
+                        bELuz.setEnabled(true);
+                        bALuz.setEnabled(false);
+                    }
                 }
-                else if(view.getId() == bAlarma.getId())
+                else if(view.getId() == bEAlarma.getId() || view.getId() == bAAlarma.getId())
                 {
                     conn.obtenerCola().insertar(3);
+                    if(bEAlarma.isEnabled())
+                    {
+                        bEAlarma.setEnabled(false);
+                        bAAlarma.setEnabled(true);
+                    }
+                    else
+                    {
+                        bEAlarma.setEnabled(true);
+                        bAAlarma.setEnabled(false);
+                    }
+                }
+                else if(view.getId() == bAGarage.getId() || view.getId() == bCGarage.getId())
+                {
+                    conn.obtenerCola().insertar(4);
+                    if(bAGarage.isEnabled())
+                    {
+                        bAGarage.setEnabled(false);
+                        bCGarage.setEnabled(true);
+                    }
+                    else
+                    {
+                        bAGarage.setEnabled(true);
+                        bCGarage.setEnabled(false);
+                    }
                 }
             }
         }
