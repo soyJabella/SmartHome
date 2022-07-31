@@ -11,10 +11,12 @@ class Conexion implements Runnable
     private String ipServidor;
     private Cola c;
     private boolean verConexion;
+    private boolean valIpServidor;
 
     public Conexion()
     {
         this.verConexion = false;
+        this.valIpServidor = false;
         this.c = new Cola();
         this.t = new Thread(this, "Conexion");
         this.t.start();
@@ -28,6 +30,10 @@ class Conexion implements Runnable
     public boolean verificarConexion()
     {
         return this.verConexion;
+    }
+
+    public boolean isValIpServidor() {
+        return valIpServidor;
     }
 
     public synchronized Cola obtenerCola()
@@ -52,6 +58,7 @@ class Conexion implements Runnable
     {
         while(true)
         {
+            this.valIpServidor = false;
             if(this.verificarConexion()==true)
             {
                 while(true)
@@ -64,6 +71,7 @@ class Conexion implements Runnable
             }
             else if(this.ipServidor!=null)
             {
+                this.valIpServidor = true;
                 try
                 {
                     InetAddress ip = InetAddress.getByName(this.ipServidor);

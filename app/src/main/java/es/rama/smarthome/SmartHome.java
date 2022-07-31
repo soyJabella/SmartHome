@@ -25,6 +25,27 @@ public class SmartHome extends Activity {
         private EditText iIpServidor;
         private ProgressBar barEspera;
 
+        private boolean validarIp(String ip)
+        {
+            String vlsIp[] = ip.split("\\.");
+            if(vlsIp.length != 4)
+                return false;
+
+            try
+            {
+                for(int i=0; i<4; i++)
+                {
+                    Integer.parseInt(vlsIp[i]);
+                }
+            }
+            catch (NumberFormatException e)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         public Login()
         {
             setContentView(R.layout.login);
@@ -38,16 +59,20 @@ public class SmartHome extends Activity {
                 {
                     barEspera.setVisibility(ProgressBar.VISIBLE);
                     String ipServidor = iIpServidor.getText().toString();
+
+                    //Borrando espacios en blanco
+                    ipServidor = ipServidor.replaceAll(" ", "");
+
+                    if(!validarIp(ipServidor))
+                    {
+                        iIpServidor.setText("");
+                        Toast.makeText(SmartHome.this, "No se reconoce la dirección ip", Toast.LENGTH_LONG).show();
+                        barEspera.setVisibility(ProgressBar.INVISIBLE);
+                        return;
+                    }
+
                     conn.establecerIpServidor(ipServidor);
-
-                    try
-                    {
-                        Thread.sleep(500);
-                    }
-                    catch (InterruptedException e)
-                    {
-
-                    }
+                    while(conn.isValIpServidor());
 
                     if(conn.verificarConexion()==true)
                     {
@@ -56,6 +81,7 @@ public class SmartHome extends Activity {
                     }
                     else
                     {
+                        iIpServidor.setText("");
                         Toast.makeText(SmartHome.this, "No se pudo establecer conexion", Toast.LENGTH_LONG).show();
                     }
                     barEspera.setVisibility(ProgressBar.INVISIBLE);
