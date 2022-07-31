@@ -62,10 +62,8 @@
                     android:foregroundTintMode="multiply"
                     android:text="Enceder alarma"
                     android:textSize="12dp"
-                    app:icon="@drawable/alarm"
-                    app:iconSize="25dp"
+                    android:drawableLeft="@drawable/iconalarm"
                     tools:ignore="TextContrastCheck" />
-
                 <Button
                     android:id="@+id/bAPuerta"
                     android:layout_width="155dp"
@@ -75,7 +73,7 @@
                     android:foregroundTintMode="multiply"
                     android:text="Abrir puerta "
                     android:textSize="12dp"
-                    app:icon="@drawable/enter"
+                    android:drawableLeft="@drawable/icondoor"
                     app:iconSize="25dp" />
 
                 <Button
@@ -86,7 +84,7 @@
                     android:fontFamily="@font/trade_winds"
                     android:text="Encender luz"
                     android:textSize="12dp"
-                    app:icon="@drawable/light"
+                    android:drawableLeft="@drawable/iconlight"
                     app:iconSize="25dp" />
 
                 <Button
@@ -97,7 +95,7 @@
                     android:fontFamily="@font/trade_winds"
                     android:text="ABRIR GARAGE"
                     android:textSize="12dp"
-                    app:icon="@drawable/car"
+                    android:drawableLeft="@drawable/icongarage"
                     app:iconSize="25dp" />
 
             </LinearLayout>
@@ -117,7 +115,7 @@
                     android:fontFamily="@font/trade_winds"
                     android:text="Apagar alarma"
                     android:textSize="12dp"
-                    app:icon="@drawable/alarm_stop"
+                    android:drawableLeft="@drawable/iconalarmstop"
                     app:iconSize="25dp"
                     app:iconTintMode="multiply" />
 
@@ -129,7 +127,7 @@
                     android:fontFamily="@font/trade_winds"
                     android:text="Cerrar puerta "
                     android:textSize="12dp"
-                    app:icon="@drawable/door"
+                    android:drawableLeft="@drawable/icondoorstop"
                     app:iconSize="25dp"
                     app:iconTintMode="multiply" />
 
@@ -141,7 +139,7 @@
                     android:fontFamily="@font/trade_winds"
                     android:text="Apagar luz"
                     android:textSize="12dp"
-                    app:icon="@drawable/idea"
+                    android:drawableLeft="@drawable/iconlightstop"
                     app:iconSize="25dp"
                     app:iconTintMode="multiply" />
 
@@ -153,7 +151,7 @@
                     android:fontFamily="@font/trade_winds"
                     android:text="CERRAR GARAGE"
                     android:textSize="12dp"
-                    app:icon="@drawable/car_stop"
+                    android:drawableLeft="@drawable/icongaragestop"
                     app:iconSize="25dp"
                     app:iconTintMode="multiply" />
             </LinearLayout>
