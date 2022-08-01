@@ -5,8 +5,16 @@
       <map>
         <entry key="..\:/Users/andre/AndroidStudioProjects/SmartHome/app/src/main/res/layout/login.xml" value="0.33" />
         <entry key="..\:/Users/andre/AndroidStudioProjects/SmartHome/app/src/main/res/layout/loginm.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/andre/AndroidStudioProjects/SmartHome/app/src/main/res/layout/smarthome.xml" value="0.22" />
-        <entry key="..\:/Users/usuario/SmartHome/app/src/main/res/layout/login.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/andre/AndroidStudioProjects/SmartHome/app/src/main/res/layout/smarthome.xml" value="0.1" />
+        <entry key="..\:/Users/usuario/SmartHome/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1005" />
+        <entry key="..\:/Users/usuario/SmartHome/app/src/main/res/drawable-v24/iconalarm.xml" value="0.1005" />
+        <entry key="..\:/Users/usuario/SmartHome/app/src/main/res/drawable/boton.xml" value="0.1005" />
+        <entry key="..\:/Users/usuario/SmartHome/app/src/main/res/drawable/cartas.xml" value="0.209" />
+        <entry key="..\:/Users/usuario/SmartHome/app/src/main/res/drawable/ic_door_background.xml" value="0.1005" />
+        <entry key="..\:/Users/usuario/SmartHome/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1005" />
+        <entry key="..\:/Users/usuario/SmartHome/app/src/main/res/layout/login.xml" value="0.25" />
+        <entry key="..\:/Users/usuario/SmartHome/app/src/main/res/layout/smarthome.xml" value="0.33" />
+        <entry key="..\:/Users/usuario/SmartHome/app/src/main/res/mipmap-anydpi-v26/ic_door.xml" value="0.1005" />
       </map>
     </option>
   </component>
