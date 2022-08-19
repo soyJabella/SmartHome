@@ -1,16 +1,16 @@
 package es.rama.smarthome;
 
 class Nodo{
-    private int dato;
+    private String dato;
     private Nodo sig;
 
-    public Nodo(int dato)
+    public Nodo(String dato)
     {
         this.dato = dato;
         this.sig = null;
     }
 
-    public int getDato()
+    public String getDato()
     {
         return this.dato;
     }
@@ -20,7 +20,7 @@ class Nodo{
         return this.sig;
     }
 
-    public void setDato(int dato)
+    public void setDato(String dato)
     {
         this.dato = dato;
     }

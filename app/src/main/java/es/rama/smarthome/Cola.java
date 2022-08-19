@@ -16,7 +16,7 @@ class Cola
         return this.n;
     }
 
-    public void insertar(int dato)
+    public void insertar(String dato)
     {
         if (this.cab==null)
         {
@@ -33,15 +33,15 @@ class Cola
         }
     }
 
-    public int retirar()
+    public String retirar()
     {
         if(cab!=null)
         {
-            int dato = this.cab.getDato();
+            String dato = this.cab.getDato();
             this.cab = this.cab.getSig();
             this.n--;
             return dato;
         }
-        return -1;
+        return "";
     }
 }

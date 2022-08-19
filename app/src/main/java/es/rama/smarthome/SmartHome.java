@@ -141,69 +141,44 @@ public class SmartHome extends AppCompatActivity {
             bCGarage.setEnabled(false);
         }
 
-        class EscuchadorBotones implements View.OnClickListener
-        {
+        class EscuchadorBotones implements View.OnClickListener {
             @Override
-            public void onClick(View view)
-            {
-                if(view.getId() == bAPuerta.getId() || view.getId() == bCPuerta.getId())
-                {
-                    conn.obtenerCola().insertar(1);
-                    if(bAPuerta.isEnabled())
-                    {
-                        bAPuerta.setEnabled(false);
-                        bCPuerta.setEnabled(true);
-                    }
-                    else
-                    {
-                        bAPuerta.setEnabled(true);
-                        bCPuerta.setEnabled(false);
-                    }
-                }
-                else if(view.getId() == bELuz.getId() || view.getId() == bALuz.getId())
-                {
-                    conn.obtenerCola().insertar(2);
-                    if(bELuz.isEnabled())
-                    {
-                        bELuz.setEnabled(false);
-                        bALuz.setEnabled(true);
-                    }
-                    else
-                    {
-                        bELuz.setEnabled(true);
-                        bALuz.setEnabled(false);
-                    }
-                }
-                else if(view.getId() == bEAlarma.getId() || view.getId() == bAAlarma.getId())
-                {
-                    conn.obtenerCola().insertar(3);
-                    if(bEAlarma.isEnabled())
-                    {
-                        bEAlarma.setEnabled(false);
-                        bAAlarma.setEnabled(true);
-                    }
-                    else
-                    {
-                        bEAlarma.setEnabled(true);
-                        bAAlarma.setEnabled(false);
-                    }
-                }
-                else if(view.getId() == bAGarage.getId() || view.getId() == bCGarage.getId())
-                {
-                    conn.obtenerCola().insertar(4);
-                    if(bAGarage.isEnabled())
-                    {
-                        bAGarage.setEnabled(false);
-                        bCGarage.setEnabled(true);
-                    }
-                    else
-                    {
-                        bAGarage.setEnabled(true);
-                        bCGarage.setEnabled(false);
-                    }
+            public void onClick(View view) {
+                if (view.getId() == bAPuerta.getId()) {
+                    conn.obtenerCola().insertar("1");
+                    bAPuerta.setEnabled(false);
+                    bCPuerta.setEnabled(true);
+                } else if (view.getId() == bCPuerta.getId()) {
+                    conn.obtenerCola().insertar("2");
+                    bAPuerta.setEnabled(true);
+                    bCPuerta.setEnabled(false);
+                } else if (view.getId() == bELuz.getId()) {
+                    conn.obtenerCola().insertar("3");
+                    bELuz.setEnabled(false);
+                    bALuz.setEnabled(true);
+                } else if (view.getId() == bALuz.getId()) {
+                    conn.obtenerCola().insertar("4");
+                    bELuz.setEnabled(true);
+                    bALuz.setEnabled(false);
+                } else if (view.getId() == bEAlarma.getId()) {
+                    conn.obtenerCola().insertar("5");
+                    bEAlarma.setEnabled(false);
+                    bAAlarma.setEnabled(true);
+                } else if (view.getId() == bAAlarma.getId()) {
+                    conn.obtenerCola().insertar("6");
+                    bEAlarma.setEnabled(true);
+                    bAAlarma.setEnabled(false);
+                } else if (view.getId() == bAGarage.getId()) {
+                    conn.obtenerCola().insertar("7");
+                    bAGarage.setEnabled(false);
+                    bCGarage.setEnabled(true);
+
+                } else if (view.getId() == bCGarage.getId()) {
+                    conn.obtenerCola().insertar("8");
+                    bAGarage.setEnabled(true);
+                    bCGarage.setEnabled(false);
                 }
             }
         }
-
     }
 }

@@ -41,13 +41,13 @@ class Conexion implements Runnable
         return this.c;
     }
 
-    private void enviarMensaje(int Msg)
+    private void enviarMensaje(String Msg)
     {
         DataOutputStream cSalida;
         try
         {
             cSalida = new DataOutputStream(this.conexion.getOutputStream());
-            cSalida.writeInt(Msg);
+            cSalida.writeChars(Msg);
         } catch (Exception e) {
 
         }
